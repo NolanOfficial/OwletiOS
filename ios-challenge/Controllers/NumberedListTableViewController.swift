@@ -12,26 +12,33 @@ class NumberedListTableViewController: UITableViewController {
     
     private var listOfNumbers: [Int] = []
     
+    // Removed the concurrent attribute, tableview will load out of order otherwise
     private let serialQueue = DispatchQueue(label: "AsynchronousListGenerator",
-                                    qos: .unspecified,
-                                    attributes: .concurrent)
-
+                                    qos: .unspecified)
+    
+    // Table View in order to register cell
+    @IBOutlet var customTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        // Registering the cell (Wanted to make a custom cell but didn't know if that was allowed)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        
+        // Removed multiple reload data's. If data loading is done correctly, it can be done within one call
+        // Also kept it at 2 seconds, rather than 5 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            
             for number in 1...100 {
                 self.serialQueue.async {
                     self.listOfNumbers.append(number)
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                         self.tableView.reloadData()
+                    }
                 }
             }
-            
-            self.tableView.reloadData()
         }
-        
-        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
