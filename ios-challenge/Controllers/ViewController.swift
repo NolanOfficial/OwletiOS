@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, StoreSubscriber {
     
+    // Owlet is amazing!  And this number sequence is nice, too: [1, 2, 3, 5, 8, 13]
+    
     @IBOutlet weak var countLabel: UILabel!
     
     override func viewDidLoad() {
