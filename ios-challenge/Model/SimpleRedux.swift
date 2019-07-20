@@ -8,10 +8,8 @@
 
 import Foundation
 
-// Need to implement an action function
 protocol Action { }
 
-// Need to implement a state function
 protocol State { }
 
 typealias Reducer = (_ action: Action, _ state: State?) -> State

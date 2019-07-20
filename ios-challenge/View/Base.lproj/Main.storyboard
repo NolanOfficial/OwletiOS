@@ -52,11 +52,21 @@
                                     <segue destination="7kc-Tk-3um" kind="show" id="IdL-bo-3Zj"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Click Here" translatesAutoresizingMaskIntoConstraints="NO" id="who-Uj-xJT">
+                                <rect key="frame" x="218" y="88" width="176" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cJq-L8-Nus"/>
+                                    <constraint firstAttribute="width" constant="176" id="ivC-wL-SLZ"/>
+                                    <constraint firstAttribute="width" secondItem="who-Uj-xJT" secondAttribute="height" multiplier="88:25" id="jM1-F4-ZxA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CKf-V8-AhH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="0hW-L7-Bto"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="who-Uj-xJT" secondAttribute="trailing" constant="20" id="5Nt-QV-BnD"/>
                             <constraint firstItem="CKf-V8-AhH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="GoM-cK-Zda"/>
+                            <constraint firstItem="who-Uj-xJT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Uzu-bn-A6z"/>
                             <constraint firstItem="CKf-V8-AhH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="X5J-b9-ft4"/>
                             <constraint firstItem="CKf-V8-AhH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gGu-vz-tO3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bHV-bO-DOc" secondAttribute="bottom" constant="10" id="u6z-l6-nMo"/>
@@ -73,6 +83,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="clickHereLabel" destination="who-Uj-xJT" id="g1u-zT-S7b"/>
                         <outlet property="countLabel" destination="AGP-fP-A0D" id="LnD-GO-Egb"/>
                     </connections>
                 </viewController>
@@ -178,5 +189,8 @@
             <point key="canvasLocation" x="555" y="21"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Click Here" width="1613" height="564"/>
+    </resources>
     <color key="tintColor" red="0.10346078786346793" green="0.19693669640587849" blue="0.55924809644670048" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
